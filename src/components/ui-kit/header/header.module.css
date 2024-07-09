@@ -1,0 +1,10 @@
+.header {
+  background-color: rgba(174, 111, 233, 0.848);
+}
+
+.list {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  max-width: 50%;
+}
