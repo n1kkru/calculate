@@ -1,33 +1,34 @@
 import { FC, useState } from "react";
 import { KeyboardUI } from "../ui-kit/keyboard/keyboard";
-import { TOperation, isOperation } from "../../utils/type"
+import { TOperation, TResult, isOperation } from "../../utils/type"
 import { calculate } from "../../utils/math";
-
-type ButtonType = number | null
 
 export const Keyboard : FC = () => {
 
-  const [first, setFirst] = useState<ButtonType>(null);
-  const [second, setSecond] = useState<ButtonType>(null);
+  const [first, setFirst] = useState<number>(0);
+  const [second, setSecond] = useState<number>(0);
   const [operation, setOperation] = useState<TOperation | null>(null);
-
+  const [result, setResult] = useState<TResult>('')
 
   const clickKey = (value: any) => {   
-    if (!first && (!isNaN(value) || value === ',')) {
-      setFirst(value)
-      console.log('set1', value);
+    if (!operation && (!isNaN(value) || value === ',')) {
+
+      setFirst(Number(first+value));
+      console.log(1);
     }
-    else if (first && isOperation(value)) {
-      setOperation(value)
-      console.log('setOPer', value);
+    else if (isOperation(value)) {
+      setOperation(value);
+      console.log('oper');
     }
     else if (operation && (!isNaN(value) || value === ',')) {
-      setSecond(value)
-      console.log('set2', value);
+      setSecond(Number(second+value));
+      console.log(2);
     }
     else if (first && second && operation && value === '=') {
-      console.log(calculate({first, second, operation}));
 
+      setResult(calculate({first, second, operation}));
+      console.log(first, second, operation);
+      console.log(result);
     }
   }
 

@@ -1,4 +1,4 @@
-import { TCalculate, TMathFunction } from "./type";
+import { TCalculate, TMathFunction, TResult } from "./type";
 
 export const addition = ({ first, second }: TMathFunction): number => first + second;
 export const substraction = ({ first, second }: TMathFunction): number => first - second;
@@ -8,7 +8,7 @@ export const division = ({ first, second }: TMathFunction): number | string => {
   else return "Error";
 };
 
-export function calculate({ first, second, operation }: TCalculate) : number | string | null {
+export function calculate({ first, second, operation }: TCalculate) : TResult {
   let result = null;
 
   switch (operation) {
