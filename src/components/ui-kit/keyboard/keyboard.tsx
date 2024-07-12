@@ -3,12 +3,12 @@ import styles from './keyboard.module.css';
 import { Button, ButtonProps } from '../button/button';
 import clsx from 'clsx';
 
-export interface TKeyboard {
+export interface TKeyboardUI {
 	className?: string;
 	clickKey: (value: any) => void;
 }
 
-export function KeyboardUI({className, clickKey} : TKeyboard) : ReactElement {
+export function KeyboardUI({className, clickKey} : TKeyboardUI) : ReactElement {
 	return (
 		<div className={clsx(styles.keyboard, className)}>
 			<Button text="+" onClick={clickKey}
