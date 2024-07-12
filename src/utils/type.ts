@@ -3,6 +3,8 @@ export type TMathFunction = {
   second: number
 }
 
+export type TResult = number | string | null;
+
 export type TCalculate = TMathFunction & {
   operation: TOperation
 }
