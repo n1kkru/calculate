@@ -2,4 +2,15 @@
   background-color: blanchedalmond;
   width: 100%;
   font-size: 25px;
+  text-align: center;
+}
+
+.lastResult {
+  background: cadetblue;
+  color: brown;
+}
+
+.history {
+  background: cadetblue;
+  color: lightcoral;
 }
