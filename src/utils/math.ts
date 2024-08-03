@@ -13,6 +13,8 @@ export function calculate({ first, second, operation }: TCalculate) : string {
 
   switch (operation) {
     case "+":
+      first = Number(first);
+      second = Number(second);
       result = String(addition({ first, second }));
       break;
 

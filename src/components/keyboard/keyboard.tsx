@@ -25,26 +25,27 @@ export const Keyboard : FC<TKeyboard> = ({setResult}) => {
   }
 
   const clickKey = (value: any) => {   
-    if (!operation && (!isNaN(value) || value === ',')) {
-
-      setFirst(Number(first+value));
-      // console.log(1);
+    if (!operation && (!isNaN(value) || value === '.')) {
+      setFirst(first + value);
+      console.log('first', first);
     }
     else if (isOperation(value)) {
       setOperation(value);
-      // console.log('oper');
+      console.log('oper');
     }
-    else if (operation && (!isNaN(value) || value === ',')) {
-      setSecond(Number(second+value));
-      // console.log(2);
+    else if (operation && (!isNaN(value) || value === '.')) {
+      setSecond(second+value);
+      console.log('second', second);
     }
     else if (first && second && operation && value === '=') {
       setResult(calculate({first, second, operation}));
       clearValues(calculate({first, second, operation}))
-      // console.log(first, second, operation);
+      console.log(Number(first), Number(second), operation);
     }
     else if (value === "C") {
-      clearValues()
+      clearValues();
+      console.log("все чисто!", first, second, operation);
+
     }
   }
 

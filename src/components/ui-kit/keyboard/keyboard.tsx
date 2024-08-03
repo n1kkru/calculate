@@ -43,7 +43,7 @@ export function KeyboardUI({className, clickKey} : TKeyboardUI) : ReactElement {
 				className={clsx(styles.button, styles.clear)}/>
 			<Button text="=" onClick={clickKey}
 				className={clsx(styles.button, styles.res)}/>
-			<Button text="," onClick={clickKey}
+			<Button text="." onClick={clickKey}
 				className={clsx(styles.button, styles.dot)}/>
 			<Button text="←" onClick={clickKey}
 				className={clsx(styles.button, styles.remove)}/>
