@@ -16,8 +16,5 @@ export const ResultArea: FC<TResultArea> = ({ result }) => {
     dispatch(updateHistory(result));
   }, [result]);
 
-  console.log("result", result);
-  console.log("resultsList", resultsList);
-
   return <ResultAreaUI lastResult={result} history={reversedList} />;
 };
