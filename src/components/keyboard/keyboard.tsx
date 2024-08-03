@@ -4,7 +4,7 @@ import { TOperation, TResult, isOperation } from "../../utils/type"
 import { calculate } from "../../utils/math";
 
 export interface TKeyboard {
-	setResult: (value : TResult) => void;
+	setResult: (value : string) => void;
 }
 
 export const Keyboard : FC<TKeyboard> = ({setResult}) => {
@@ -28,20 +28,20 @@ export const Keyboard : FC<TKeyboard> = ({setResult}) => {
     if (!operation && (!isNaN(value) || value === ',')) {
 
       setFirst(Number(first+value));
-      console.log(1);
+      // console.log(1);
     }
     else if (isOperation(value)) {
       setOperation(value);
-      console.log('oper');
+      // console.log('oper');
     }
     else if (operation && (!isNaN(value) || value === ',')) {
       setSecond(Number(second+value));
-      console.log(2);
+      // console.log(2);
     }
     else if (first && second && operation && value === '=') {
       setResult(calculate({first, second, operation}));
       clearValues(calculate({first, second, operation}))
-      console.log(first, second, operation);
+      // console.log(first, second, operation);
     }
     else if (value === "C") {
       clearValues()

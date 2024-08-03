@@ -1,15 +1,25 @@
 import { ReactElement } from "react";
-import { TResult } from "../../../utils/type";
-import styles from './result-area.module.css'
+import styles from "./result-area.module.css";
 
 export interface TResultAreaUI {
-  lastResult: TResult;
-  className?: string,
+  lastResult: string;
+  history: string[];
+  className?: string;
 }
 
-export function ResultAreaUI({lastResult, className} : TResultAreaUI ) : ReactElement {
-	return (
+export function ResultAreaUI({
+  lastResult,
+  history,
+  className,
+}: TResultAreaUI): ReactElement {
+  return (
     <div className={styles.area}>
-      <p>{lastResult}</p>
-    </div>)
+      <p className={styles.lastResult}>{lastResult}</p>
+      {history.map((element) => {
+        if (history.indexOf(element) !== 0) {
+          return <p className={styles.history}>{element}</p>;
+        }
+      })}
+    </div>
+  );
 }
