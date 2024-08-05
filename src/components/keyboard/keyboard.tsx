@@ -1,21 +1,23 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { KeyboardUI } from "../ui-kit/keyboard/keyboard";
 import { TOperation, TResult, isOperation } from "../../utils/type"
 import { calculate } from "../../utils/math";
 
 export interface TKeyboard {
+  res: string;
 	setResult: (value : string) => void;
 }
 
-export const Keyboard : FC<TKeyboard> = ({setResult}) => {
+export const Keyboard : FC<TKeyboard> = ({res, setResult}) => {
 
-  const [first, setFirst] = useState<number>(0);
+  const [first, setFirst] = useState<number | null>(0);
   const [second, setSecond] = useState<number>(0);
   const [operation, setOperation] = useState<TOperation | null>(null);
 
   const clearValues = (res?: TResult) => {
-    if (typeof res === "number") {
-      setFirst(res);
+    if (res) {
+      console.log('set')
+      setFirst(Number(res));
     }
     else {
       setFirst(0);
@@ -24,30 +26,44 @@ export const Keyboard : FC<TKeyboard> = ({setResult}) => {
     setOperation(null);
   }
 
-  const clickKey = (value: any) => {   
-    if (!operation && (!isNaN(value) || value === '.')) {
+  const clickKey = (value: any) => {    
+    if (!second && !operation && (!isNaN(value) || value === '.')) {
       setFirst(first + value);
-      console.log('first', first);
+      // console.log('first', first);
     }
-    else if (isOperation(value)) {
+    else if (!second && isOperation(value)) {
       setOperation(value);
-      console.log('oper');
+      console.log('oper', !second);
     }
     else if (operation && (!isNaN(value) || value === '.')) {
       setSecond(second+value);
-      console.log('second', second);
+      // console.log('second', second);
     }
-    else if (first && second && operation && value === '=') {
+    else if (first !== null && second && operation && (value === '=' || value === 'Enter')) {
       setResult(calculate({first, second, operation}));
-      clearValues(calculate({first, second, operation}))
+      // clearValues(calculate({first, second, operation}));
+      clearValues();
       console.log(Number(first), Number(second), operation);
     }
     else if (value === "C") {
       clearValues();
       console.log("все чисто!", first, second, operation);
-
     }
   }
 
-  return <KeyboardUI clickKey={clickKey}/>
+  const handleEsc = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const value : any = e.key;
+    
+    if (!second && !operation && (!isNaN(value) || value === '.')) setFirst(first + value);
+    else if (!second && isOperation(value)) setOperation(value);
+    else if (operation && (!isNaN(value) || value === '.')) setSecond(second+value);
+    else if (first !== null && second && operation && (value === '=' || value === 'Enter')) {
+      setResult(calculate({first, second, operation}));
+      clearValues();
+    }
+    else if (value === "C") clearValues();
+  };
+
+
+  return <KeyboardUI clickKey={clickKey} handlerKey={handleEsc}/>
 }

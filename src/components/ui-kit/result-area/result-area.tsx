@@ -14,12 +14,8 @@ export function ResultAreaUI({
 }: TResultAreaUI): ReactElement {
   return (
     <div className={styles.area}>
-      <p className={styles.lastResult}>{lastResult}</p>
-      {history.map((element) => {
-        if (history.indexOf(element) !== 0) {
-          return <p className={styles.history}>{element}</p>;
-        }
-      })}
+      {/* <p className={styles.lastResult}>{lastResult}</p> */}
+      {history.map((element) => <p className={styles.history}>{element}</p>)}
     </div>
   );
 }

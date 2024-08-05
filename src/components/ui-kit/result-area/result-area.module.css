@@ -1,8 +1,9 @@
 .area {
   background-color: blanchedalmond;
   width: 100%;
-  font-size: 25px;
+  font-size: 45px;
   text-align: center;
+  margin: 0;
 }
 
 .lastResult {
@@ -10,7 +11,14 @@
   color: brown;
 }
 
+.history:first-child {
+  background: cadetblue;
+  color: brown;
+  margin-block-start: 25px;
+}
+
 .history {
   background: cadetblue;
   color: lightcoral;
+  margin-block: 21px;
 }

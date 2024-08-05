@@ -6,11 +6,12 @@ import clsx from 'clsx';
 export interface TKeyboardUI {
 	className?: string;
 	clickKey: (value: any) => void;
+	handlerKey: (event: React.KeyboardEvent<HTMLDivElement>) => void;
 }
 
-export function KeyboardUI({className, clickKey} : TKeyboardUI) : ReactElement {
+export function KeyboardUI({className, clickKey, handlerKey} : TKeyboardUI) : ReactElement {
 	return (
-		<div className={clsx(styles.keyboard, className)}>
+		<div className={clsx(styles.keyboard, className)} onKeyDown={handlerKey}>
 			<Button text="+" onClick={clickKey}
 				className={clsx(styles.button, styles.plus, styles.operation)}/>
 			<Button text="*" onClick={clickKey}
@@ -43,7 +44,7 @@ export function KeyboardUI({className, clickKey} : TKeyboardUI) : ReactElement {
 				className={clsx(styles.button, styles.clear)}/>
 			<Button text="=" onClick={clickKey}
 				className={clsx(styles.button, styles.res)}/>
-			<Button text="." onClick={clickKey}
+			<Button text="," onClick={clickKey}
 				className={clsx(styles.button, styles.dot)}/>
 			<Button text="←" onClick={clickKey}
 				className={clsx(styles.button, styles.remove)}/>

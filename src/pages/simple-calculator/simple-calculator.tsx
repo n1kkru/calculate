@@ -2,7 +2,7 @@ import { Keyboard } from "../../components/keyboard/keyboard";
 import { ResultArea } from "../../components/result-area/result-area";
 import { Preloader } from "../../components/ui-kit/preloader";
 import styles from "./simple-calculator.module.css";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 export const SimpleCalculator: FC = () => {
   /** TODO: взять переменную из стора */
@@ -16,7 +16,7 @@ export const SimpleCalculator: FC = () => {
         <Preloader />
       ) : (
         <main className={styles.main}>
-          <Keyboard setResult={setResult} />
+          <Keyboard res={result} setResult={setResult} />
           <ResultArea result={result} />
         </main>
       )}
