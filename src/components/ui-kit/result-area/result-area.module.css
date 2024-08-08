@@ -6,11 +6,6 @@
   margin: 0;
 }
 
-.lastResult {
-  background: cadetblue;
-  color: brown;
-}
-
 .history:first-child {
   background: cadetblue;
   color: brown;
