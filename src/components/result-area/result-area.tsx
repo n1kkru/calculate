@@ -5,7 +5,7 @@ import { addResult, updateHistory } from "../../store/silce";
 
 interface TResultArea {
   result: string;
-}git 
+}
 
 export const ResultArea: FC<TResultArea> = ({ result }) => {
   const dispatch = useDispatch();

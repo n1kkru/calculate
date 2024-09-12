@@ -6,9 +6,15 @@ export function HeaderUI() {
   <header className={styles.header}>
     <nav>
       <li className={styles.list}>
-        <ul>Калькулятор</ul>
-        <ul>Интеграл</ul>
-        <ul>Задачи</ul>
+        <ul className={styles.ul}>
+         <a className={styles.element} href="#">Калькулятор</a>
+        </ul>
+        <ul className={styles.ul}>
+         <a className={styles.element} href="">Интеграл</a>
+        </ul>
+        <ul className={styles.ul}>
+          <a className={styles.element} href="">Задачи</a>
+        </ul>
       </li>
     </nav>
   </header>

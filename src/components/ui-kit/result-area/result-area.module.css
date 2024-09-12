@@ -1,19 +1,21 @@
 .area {
-  background-color: blanchedalmond;
   width: 100%;
+  margin: 0;
+  border: solid 3px rgba(0, 0, 0, 0.377);
+  border-radius: 5%;
   font-size: 45px;
   text-align: center;
-  margin: 0;
+  background-color:gainsboro;
 }
 
 .history:first-child {
-  background: cadetblue;
-  color: brown;
   margin-block-start: 25px;
+  color: black;
 }
 
 .history {
-  background: cadetblue;
-  color: lightcoral;
+  display: block;
   margin-block: 21px;
+  color: gray;
+  transition: display 3s ;
 }
