@@ -1,8 +1,5 @@
 .header {
-  background-image: 
-    repeating-linear-gradient(90deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(180deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
-    linear-gradient(var(--background-upper-color, rgba(74, 66, 66, 0.772)), var(--background-lower-color, white));;
+  background-image: var(--background-image);
 }
 
 .list {
@@ -19,10 +16,10 @@
 .element {
   all: unset;
   text-decoration: none;
-  border: solid 2px rgba(0, 0, 0, 0.377);
+  border: solid 2px var(--border-color, rgba(0, 0, 0, 0.377));
   border-radius: 45%;
   text-align: center;
   padding: 15px;
   font-size: 24px;
-  background-color: rgb(136, 92, 70);
+  background-color: var(--accent-color, rgb(136, 92, 70));
 }

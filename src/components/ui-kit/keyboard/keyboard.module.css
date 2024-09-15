@@ -1,8 +1,8 @@
 .button {
   position: relative;
   margin: 5px;
-  border: solid 2px rgba(0, 0, 0, 0.377);
-  background-color: rgb(255, 255, 255);
+  border: solid 2px var(--border-color);
+  background-color: var(--background-color);
   border-radius: 50%;
   font-size: 30px;
   cursor: pointer;
@@ -20,9 +20,9 @@
   width: 100%;
   max-width: max-content;
   max-height: 800px;
-  border: solid 3px rgba(0, 0, 0, 0.377);
+  border: solid 3px var(--border-color,  rgba(0, 0, 0, 0.377));
   border-radius: 5%;
-  background-color:gainsboro;
+  background-color: var(--section-color,#dcdcdc);
   grid-template: 
     'plus minus multy division' 100px
     'seven eight nine clear' 100px
@@ -99,7 +99,7 @@
 .res {
   grid-area: res;
   border-radius: 50%/30%;
-  background-color: rgb(123, 221, 123);
+  background-color: var(--equal-color, green);
 }
 
 .dot {
@@ -107,5 +107,5 @@
 }
 
 .operation {
-  background-color: rgb(136, 92, 70);
+  background-color: var(--accent-color, rgb(136, 92, 70));
 }
