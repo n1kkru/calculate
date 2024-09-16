@@ -1,5 +1,6 @@
 import React from "react"
 import styles from './header.module.css'
+import { ThemeButton } from "../../themeButton/themeButton"
 
 export function HeaderUI() {
   return (
@@ -17,5 +18,6 @@ export function HeaderUI() {
         </ul>
       </li>
     </nav>
+    <ThemeButton />
   </header>
 )}
