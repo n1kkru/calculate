@@ -63,10 +63,16 @@ const Theme = (props: { children: React.ReactNode }) => {
   );
 };
 
-const ThemeButton = () => {
+type ThemeButtonProps = {
+  className: string
+}
+
+const ThemeButton = ({className}: ThemeButtonProps) => {
   const { theme, setTheme } = useTheme();
 
   const handleSwitchTheme = () => {
+    console.log('---', theme);
+    
     if (theme === 'dark') {
       setTheme('light');
     } else {
@@ -75,7 +81,7 @@ const ThemeButton = () => {
   };
 
   return (
-    <div className='' onClick={handleSwitchTheme}>
+    <div className={className} onClick={handleSwitchTheme}>
       <div className='' data-theme={theme} />
     </div>
   );

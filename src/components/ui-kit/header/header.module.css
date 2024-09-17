@@ -2,6 +2,10 @@
   background-image: var(--background-image);
 }
 
+.nav {
+  display: flex;
+}
+
 .list {
   display: flex;
   margin: auto;
@@ -22,4 +26,15 @@
   padding: 15px;
   font-size: 24px;
   background-color: var(--accent-color, rgb(136, 92, 70));
+}
+
+.themeButton {
+  justify-content: center;
+  align-self: center;
+  display: inline;
+  margin-right: 50px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url(../../../../public/day-night.svg);
 }
