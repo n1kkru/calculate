@@ -1,5 +1,4 @@
 import { createContext, FC, useContext, useEffect, useRef, useState } from "react";
-import { Button } from "../ui-kit/button/button";
 
 /* список тем */
 const themesList = {
@@ -64,7 +63,7 @@ const Theme = (props: { children: React.ReactNode }) => {
 };
 
 type ThemeButtonProps = {
-  className: string
+  className: string;
 }
 
 const ThemeButton = ({className}: ThemeButtonProps) => {
