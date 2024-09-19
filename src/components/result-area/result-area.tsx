@@ -10,7 +10,7 @@ interface TResultArea {
 export const ResultArea: FC<TResultArea> = ({ result }) => {
   const dispatch = useDispatch();
   const resultsList = useSelector((state) => state.resultReducer.history);
-  const reversedList = [...resultsList].reverse().splice(0,6);
+  const reversedList = [...resultsList].reverse().splice(0, 6);
 
   useEffect(() => {
     dispatch(updateHistory(result));

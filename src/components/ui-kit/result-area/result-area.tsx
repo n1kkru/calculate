@@ -15,7 +15,9 @@ export function ResultAreaUI({
   return (
     <div className={styles.area}>
       {/* <p className={styles.lastResult}>{lastResult}</p> */}
-      {history.map((element) => <p className={styles.history}>{element}</p>)}
+      {history.map((element) => (
+        <p className={styles.history}>{element}</p>
+      ))}
     </div>
   );
 }

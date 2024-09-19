@@ -1,16 +1,23 @@
-import { createContext, FC, useContext, useEffect, useRef, useState } from "react";
+import {
+  createContext,
+  FC,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 /* список тем */
 const themesList = {
-  light: 'light',
-  dark: 'dark',
+  light: "light",
+  dark: "dark",
 };
 
 type Themes = keyof typeof themesList;
 
 /* контекст темы */
 const ThemeContext = createContext<
-    {
+  | {
       theme: Themes;
       setTheme: (theme: Themes) => void;
       themesList: { [key: string]: string };
@@ -27,26 +34,24 @@ const useTheme = () => {
       'You can use "useTheme" hook only within a <ThemeProvider> component.'
     );
   }
-
   return context;
 };
 
-
-function getTheme() : Themes {
-  let theme = localStorage.getItem('theme');
+function getTheme(): Themes {
+  let theme = localStorage.getItem("theme");
   if (!theme) {
-    localStorage.setItem('theme', 'light');
-    theme = 'light';
+    localStorage.setItem("theme", "light");
+    theme = "light";
   }
   return theme as Themes;
-};
+}
 
 const Theme = (props: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Themes>(getTheme);
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   return (
@@ -64,24 +69,24 @@ const Theme = (props: { children: React.ReactNode }) => {
 
 type ThemeButtonProps = {
   className: string;
-}
+};
 
-const ThemeButton = ({className}: ThemeButtonProps) => {
+const ThemeButton = ({ className }: ThemeButtonProps) => {
   const { theme, setTheme } = useTheme();
 
   const handleSwitchTheme = () => {
-    console.log('---', theme);
-    
-    if (theme === 'dark') {
-      setTheme('light');
+    console.log("---", theme);
+
+    if (theme === "dark") {
+      setTheme("light");
     } else {
-      setTheme('dark');
+      setTheme("dark");
     }
   };
 
   return (
     <div className={className} onClick={handleSwitchTheme}>
-      <div className='' data-theme={theme} />
+      <div className="" data-theme={theme} />
     </div>
   );
 };

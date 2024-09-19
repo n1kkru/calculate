@@ -17,5 +17,5 @@
   display: block;
   margin-block: 21px;
   color: var(--second-text-color, gray);
-  transition: display 3s ;
+  transition: display 3s;
 }

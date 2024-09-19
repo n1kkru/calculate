@@ -15,8 +15,8 @@ code {
 :root {
   /*шрифты*/
   --main-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   --accent-font: PressStart2P, fantasy;
   /**/
   --title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
@@ -33,18 +33,20 @@ code {
   --background-line-color: #808080;
   --background-upper-color: rgba(74, 66, 66, 0.772);
   --background-lower-color: #fff;
-  --background-image: 
-  repeating-linear-gradient(90deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
-  repeating-linear-gradient(180deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
-  linear-gradient(var(--background-upper-color, rgba(74, 66, 66, 0.772)), var(--background-lower-color, white));;
- }
+  --background-image:
+    repeating-linear-gradient(90deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(180deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
+    linear-gradient(var(--background-upper-color, rgba(74, 66, 66, 0.772)), var(--background-lower-color, white));
+  ;
+}
 
- [data-theme='dark'] {
+[data-theme='dark'] {
   /*цвета*/
   --background-color: #181818;
   --text-color: #fff;
   --second-text-color: rgb(136, 92, 70);
-  --accent-color: rgb(2, 48, 61);;
+  --accent-color: rgb(2, 48, 61);
+  ;
   --border-color: rgba(0, 0, 0, 0.377);
   --section-color: #484848;
   --equal-color: rgb(123, 221, 123);
@@ -52,8 +54,9 @@ code {
   --background-line-color: #1d1a1a;
   --background-upper-color: rgba(130, 130, 130, 0.772);
   --background-lower-color: #181818;
-  --background-image: 
-  repeating-linear-gradient(90deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
-  repeating-linear-gradient(180deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
-  linear-gradient(var(--background-upper-color, rgba(74, 66, 66, 0.772)), var(--background-lower-color, white));;
- }
+  --background-image:
+    repeating-linear-gradient(90deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(180deg, var(--background-line-color, gray) 0 1px, transparent 1px 4px),
+    linear-gradient(var(--background-upper-color, rgba(74, 66, 66, 0.772)), var(--background-lower-color, white));
+  ;
+}
