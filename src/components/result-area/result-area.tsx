@@ -5,9 +5,10 @@ import { addResult, updateHistory } from "../../store/silce";
 
 interface TResultArea {
   result: string;
+  tempValues: string;
 }
 
-export const ResultArea: FC<TResultArea> = ({ result }) => {
+export const ResultArea: FC<TResultArea> = ({ tempValues, result }) => {
   const dispatch = useDispatch();
   const resultsList = useSelector((state) => state.resultReducer.history);
   const reversedList = [...resultsList].reverse().splice(0, 6);
@@ -16,5 +17,5 @@ export const ResultArea: FC<TResultArea> = ({ result }) => {
     dispatch(updateHistory(result));
   }, [result]);
 
-  return <ResultAreaUI lastResult={result} history={reversedList} />;
+  return <ResultAreaUI tempValues={tempValues} history={reversedList} />;
 };

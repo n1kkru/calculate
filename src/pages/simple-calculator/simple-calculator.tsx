@@ -8,7 +8,8 @@ export const SimpleCalculator: FC = () => {
   /** TODO: взять переменную из стора */
   const isIngredientsLoading = false;
   // const isIngredientsLoadin = useSelector((state) => state.burgerReducers.isLoading);
-  const [result, setResult] = useState<string>("12");
+  const [result, setResult] = useState<string>("");
+  const [tempValues, setTempValues] = useState<string>("");
 
   return (
     <>
@@ -16,8 +17,12 @@ export const SimpleCalculator: FC = () => {
         <Preloader />
       ) : (
         <main className={styles.main}>
-          <Keyboard res={result} setResult={setResult} />
-          <ResultArea result={result} />
+          <Keyboard
+            res={result}
+            setTempValues={setTempValues}
+            setResult={setResult}
+          />
+          <ResultArea tempValues={tempValues} result={result} />
         </main>
       )}
     </>

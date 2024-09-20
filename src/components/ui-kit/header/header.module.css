@@ -26,6 +26,27 @@
   text-decoration: none;
   background-color: var(--accent-color, rgb(136, 92, 70));
   all: unset;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.calc {
+  min-width: 50px;
+  min-height: 50px;
+  background-image: url(../../../../public/calculator-theme-light.svg);
+}
+
+.integral {
+  min-width: 50px;
+  min-height: 50px;
+  background-image: url(../../../../public/integral-theme-light.svg);
+}
+
+.task {
+  min-width: 50px;
+  min-height: 50px;
+  background-image: url(../../../../public/task-theme-light.svg);
 }
 
 .themeButton {

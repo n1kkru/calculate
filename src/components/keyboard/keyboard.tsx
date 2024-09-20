@@ -6,12 +6,17 @@ import { calculate } from "../../utils/math";
 export interface TKeyboard {
   res: string;
   setResult: (value: string) => void;
+  setTempValues: (value: string) => void;
 }
 
-export const Keyboard: FC<TKeyboard> = ({ res, setResult }) => {
+export const Keyboard: FC<TKeyboard> = ({ res, setResult, setTempValues }) => {
   const [first, setFirst] = useState<number | null>(0);
   const [second, setSecond] = useState<number>(0);
   const [operation, setOperation] = useState<TOperation | null>(null);
+
+  useEffect(() => {
+    // if (first) { setTempValues((value : string) => value + first)}
+  }, [first, second, operation])
 
   const clearValues = (res?: TResult) => {
     if (res) {

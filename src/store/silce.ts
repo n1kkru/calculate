@@ -2,6 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface stateInterface {
   isLoading: boolean;
+  tempValues: string;
   result: string;
   history: string[];
   error: string | null;
@@ -9,6 +10,7 @@ interface stateInterface {
 
 const initialState: stateInterface = {
   isLoading: false,
+  tempValues: "",
   result: "",
   history: [],
   error: "",

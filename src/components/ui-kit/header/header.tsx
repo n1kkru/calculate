@@ -9,17 +9,17 @@ export function HeaderUI() {
         <li className={styles.list}>
           <ul className={styles.ul}>
             <a className={styles.element} href="#">
-              Калькулятор
+              <div className={styles.calc} />
             </a>
           </ul>
           <ul className={styles.ul}>
             <a className={styles.element} href="">
-              Интеграл
+              <div className={styles.integral} />
             </a>
           </ul>
           <ul className={styles.ul}>
             <a className={styles.element} href="">
-              Задачи
+              <div className={styles.task} />
             </a>
           </ul>
         </li>
