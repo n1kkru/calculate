@@ -1,5 +1,5 @@
 export * from './simple-calculator';
-// export * from './feed';
+export * from './tasks';
 // export * from './forgot-password';
 // export * from './login';
 // export * from './not-fount-404';
